@@ -2,8 +2,9 @@
 
 
 require_once 'Vehicle.php';
+require_once 'LightableInterface.php';
 
-class Car extends Vehicle
+class Car extends Vehicle implements LightableInterface
 {
     /**
      * @var string
@@ -70,5 +71,15 @@ class Car extends Vehicle
         }
 
         return "C'est parti, tout se passe bien !";
+    }
+
+    public function switchOn()
+    {
+        return true;
+    }
+
+    public function switchOff()
+    {
+        return false;
     }
 }
